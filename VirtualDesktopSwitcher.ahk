@@ -124,59 +124,59 @@ switchByMouse(Direction){
     }
 }
 
-; switchWindowToDeskop(targetDesktop){
-;     ; Refresh the Data about the current desktops
-;     global CurrentDesktop, DesktopCount
-;     mapDesktopsFromRegistry()
-;     NumberOfDowns:= getDowns(targetDesktop)
-;     ; MsgBox, 4 , "some title" , %NumberOfDowns%
-;     if(NumberOfDowns < 0){
-;         return
-;     }
-;     openMultitaskingViewFrame()
-;     Sleep, 1000
-;     send {AppsKey}
-;     send {Down 3}
-;     send {Right}
-;     send {Down %NumberOfDowns%}
-;     ; Sleep, 100
-;     ; closeMultitaskingViewFrame()
+switchWindowToDeskop(targetDesktop){
+    ; Refresh the Data about the current desktops
+    global CurrentDesktop, DesktopCount
+    mapDesktopsFromRegistry()
+    NumberOfDowns:= getDowns(targetDesktop)
+    ; MsgBox, 4 , "some title" , %NumberOfDowns%
+    if(NumberOfDowns < 0){
+        return
+    }
+    openMultitaskingViewFrame()
+    Sleep, 1000
+    send {AppsKey}
+    send {Down 3}
+    send {Right}
+    send {Down %NumberOfDowns%}
+    ; Sleep, 100
+    ; closeMultitaskingViewFrame()
     
-; }
+}
 
-; openMultitaskingViewFrame()
-; {
-; 	IfWinNotActive, ahk_class MultitaskingViewFrame
-; 	{
-; 		send #{Tab}
-; 		; WinWaitActive, ahk_class MultitaskingViewFrame
-; 	}
-; 	return
-; }
+openMultitaskingViewFrame()
+{
+	IfWinNotActive, ahk_class MultitaskingViewFrame
+	{
+		send #{Tab}
+		; WinWaitActive, ahk_class MultitaskingViewFrame
+	}
+	return
+}
 
-; closeMultitaskingViewFrame()
-; {
-; 	; IfWinActive, ahk_class MultitaskingViewFrame
-; 	; {
-; 		send #{tab}
-; 	; }
-; 	return 
-; }
+closeMultitaskingViewFrame()
+{
+	; IfWinActive, ahk_class MultitaskingViewFrame
+	; {
+		send #{tab}
+	; }
+	return 
+}
 
-; getDowns(targetDesktop){
-;     global CurrentDesktop, DesktopCount
-;     if(targetDesktop < 1 || targetDesktop > DesktopCount || targetDesktop == CurrentDesktop){
-;         return -1
-;     }
-;     if(targetDesktop < CurrentDesktop){
-;         return targetDesktop-1
-;     }
-;     else{
-;         return targetDesktop-2
-;     }
+getDowns(targetDesktop){
+    global CurrentDesktop, DesktopCount
+    if(targetDesktop < 1 || targetDesktop > DesktopCount || targetDesktop == CurrentDesktop){
+        return -1
+    }
+    if(targetDesktop < CurrentDesktop){
+        return targetDesktop-1
+    }
+    else{
+        return targetDesktop-2
+    }
 
 
-; }
+}
 
 ; Main
 SetKeyDelay, 75
