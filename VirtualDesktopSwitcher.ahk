@@ -124,6 +124,11 @@ switchByMouse(Direction){
     }
 }
 
+/* 
+
+    This is a useless part of  code
+
+ */
 switchWindowToDeskop(targetDesktop){
     ; Refresh the Data about the current desktops
     global CurrentDesktop, DesktopCount
